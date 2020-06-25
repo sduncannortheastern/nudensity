@@ -41,7 +41,7 @@ tr.searchTable {
 }
 
 td.searchTable {
-	border: 1px solid black;
+	#border: 1px solid black;
 }
 
 .button {
