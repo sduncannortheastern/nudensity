@@ -1,0 +1,145 @@
+<html>
+  <head>
+     <meta charset="utf-8"/>
+     <title>NUDensity</title>
+	 <link rel="stylesheet" href="nudensity.css"/>
+	 
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	 <script src="js/scripts.js"></script>	
+     <script>
+		$( document ).ready(function() {
+  			var api_url = 'https://api-dev.northeastern.edu/density/favorites'
+			var result;
+
+			$.ajax({
+        		url: api_url ,
+        		contentType: "application/json",
+        		dataType: 'json',
+        		success: function(result){
+					for (i=0; i<result.length; i++) {
+						   console.log(result[i]);
+						   if (i % 2 == 0) {
+							   bg='lightblue';
+						   } else {
+							   bg='white'
+						   }
+						   $("#currdensity").append("<tr bgcolor='" + bg + "'><td class='"  + result[i].density + "' width='25%''>" + result[i].building + "</td><td><img height='75px' width='75px' src='" + result[i].picture +  "'></td></tr>");			   
+					}
+
+				}
+			
+			})
+
+		});
+
+     	function popup(){
+     		let params = 'height=100';
+           window.open('popup.html','bfs', 'toolbar=no,location=no,s tatus=no, menubar=no, scrollbars=no, resizable=no, width=400,height=200');
+           return false;
+		}
+		
+     </script>
+  </head>
+  <body>
+  	<header>
+  		<h1>NU Density</h1>  		
+  	</header>
+  	<article>
+  		<table >
+  			<tr>
+  				<td >
+  					<table>
+  						<tr class="threerow">
+  							<td>
+  								<section>
+  									<!--left section-->
+  									<h2>Current Density</h2>
+  									<table id="currdensity" border="1">
+										  <thead><h3>Recent Destinations</h3></thead>
+										  <tbody></tbody>
+  										<!--<tr bgcolor="lightblue">
+  											<td class="low" width="25%">Snell Library</td>
+  											<td><img height="75px" width="75px" src="snell.jpeg"></td>
+  										</tr>
+  										<tr>
+  											<td class="low">
+  												Curry Student Centery
+  											</td>
+  											<td><img height="75px" width="75px" src="currystudent.jpeg"></td>
+  										</tr>
+  										<tr bgcolor="lightblue">
+  											<td class="high">
+  												Rebecca's Cafe
+  											</td>
+  											<td><img height="75px" width="75px" src="rebeccas.jpeg"></td>
+										  </tr>
+										-->  
+  									</table>
+  								</section>
+  							</td>
+  						</tr>
+  						<tr class="threerow">
+  							<td>
+  							<table>
+  								<tr class="searchTable">
+  										<td class="searchTable">Check Density at Another Location: &nbsp;&nbsp;&nbsp;<input type="button" value="Check" onclick="popup()">
+  										</td>
+  								</tr>
+  								<tr class="searchTable">
+  									<td>
+  										<table class="searchTable">
+  											<tr class="searchTable">
+  												<td>West Village E</td>
+  												<td><input type="submit" value="Add Favorite" class="button"/>
+  											</tr>
+  											<tr class="searchTable">
+  												<td>West Village F</td>
+  												<td><input type="submit" value="Add Favorite" class="button"/>
+  											</tr>
+  										</table>
+  									</td>
+  								</tr>
+  							</table>
+  						</td>
+  						</tr>
+  						<tr class="threerow">
+  							<td>
+  								<aside>
+  									<!-- right section-->
+  									<h2>Legend</h2>
+  									<table>
+  										<tr>
+  											<td class="Low">Low Density</td>
+  										</tr>
+  										<tr>
+  											<td class="medium">Medium Density</td>
+  										</tr>
+  										<tr>
+  											<td class="high">High Density</td>
+  										</tr>
+  									</table>
+  								</aside>
+  							</td>
+  						</tr>
+  					</table>
+  				</td>
+  				<td>
+  					<table>
+  					<tr>	
+  					<section>
+  						<h2>Campus Map</h2>
+  					</section>
+  					</tr>
+  					<tr>
+  						<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="90%" id="gmap_canvas" src="https://maps.google.com/maps?q=Northeastern%20University&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a></div><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div>
+  					</tr>
+  					</table>
+  				</td>
+  			</tr>
+  		<table>
+  	<article>
+  </body>
+  <footer>
+  	<p>&copy; 2020 Best Solutions. LLC. All Rights Reserved.</p> 
+  </footer>
+</html>

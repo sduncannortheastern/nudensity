@@ -1,0 +1,68 @@
+body {
+	font-size: 10pt;
+}
+
+h1 {
+	color: red;
+}
+
+table, tr, th {
+	padding: 3px;
+	width: 100%;
+	text-align: left;
+	vertical-align:top;
+	height:90%;
+}
+
+td {
+	width: 50%;
+	text-align: left;
+}
+
+.threecolumn {
+	width: 33%;
+}
+
+.threerow {
+	height: 33%;
+}
+
+th.searchTable {
+   text-align: left;
+   height: 10%;
+   width: 25%;
+   border: 1px lightgrey;
+}
+
+tr.searchTable {
+	height: 25%;
+	border: 1px lightgrey;
+
+}
+
+td.searchTable {
+	border: 1px solid black;
+}
+
+.button {
+  background-color: #008CBA;; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.low {
+	color: green;
+}
+
+.medium {
+	color: orange;
+}
+
+.high {
+	color: red;
+}

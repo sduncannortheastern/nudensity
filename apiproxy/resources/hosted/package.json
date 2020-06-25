@@ -1,0 +1,18 @@
+{
+  "name": "converttosoapresponse",
+  "version": "1.0.0",
+  "description": "API to query active students from Banner",
+  "main": "./index.js",
+  "dependencies": {
+    "xml-writer": "^1.7.0",
+    "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.3.1",
+    "async": "^1.5.0"
+  },
+  "scripts": {
+    "start": "node index.js --use_strict "
+  }
+}

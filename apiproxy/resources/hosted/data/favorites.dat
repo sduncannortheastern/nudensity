@@ -1,0 +1,5 @@
+[
+{"building":"Snell Library", "picture":"snell.jpg", "density": "Low" },
+{"building":"Curry Student Center", "picture":"currystudent.jpg", "density": "Low"},
+{"building":"Rebecca's Cafe", "picture": "rebeccas.jpeg", "density": "High"}
+]

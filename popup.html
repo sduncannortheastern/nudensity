@@ -1,0 +1,35 @@
+<html>
+  <head>
+     <meta charset="utf-8"/>
+     <title>NUDensity</title>
+     <link rel="stylesheet" href="nudensity.css"/>
+     <script>
+     	function closeMe() {
+     		window.opener = self;
+     		window.close();
+     	}
+     </script>
+  </head>
+  <body>
+
+
+  	<table height="90%">
+		<tr height="25%">
+				<td class="searchTable">Check Density at Another Location: &nbsp;&nbsp;&nbsp;<input type="button" value="Check">
+				</td>
+		</tr>
+		<tr height="75%">
+			<table class="searchTable">
+				<tr class="searchTable">
+					<td>West Village E</td>
+					<td><input type="submit" value="Add Favorite" class="button" onclick="closeMe()"/>
+				</tr>
+				<tr class="searchTable">
+					<td>West Village F</td>
+					<td><input type="submit" value="Add Favorite" class="button"/>
+				</tr>
+			</table>
+		</tr>
+	</table>
+	
+  </body>
