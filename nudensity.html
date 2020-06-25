@@ -82,8 +82,9 @@
   							<td>
   							<table>
   								<tr class="searchTable">
-  										<td class="searchTable">Check Density at Another Location: &nbsp;&nbsp;&nbsp;<input type="button" value="Check" onclick="popup()">
-  										</td>
+										  <td class="searchTable">Check Density at Another Location: </td>
+										  <td><select id="location_select_box" style="width: 150px;"></select>
+  										<td><input type="submit" value="Search" onclick="popup()"></td>
   								</tr>
   								<tr class="searchTable">
   									<td>
@@ -138,6 +139,32 @@
   			</tr>
   		<table>
   	<article>
+		<script>
+			function fill_dropdwn(){
+				var api_url = 'https://gxvu5oh4ne.execute-api.us-east-1.amazonaws.com/prod/buildings';
+			console.log(api_url);
+			$.ajax({
+				url: api_url,
+				contentType: "application/json",
+				dataType: 'json',
+
+				success: function(result){
+					console.log(result);
+					// return result;
+					var selectList = document.getElementById("location_select_box");
+					for(var i = 0; i < result.Count; i++){
+						var option = document.createElement("option");
+						option.value = result.Items[i].name;
+						option.text = result.Items[i].name;
+						selectList.appendChild(option);
+					}
+				}
+				});
+				// return 
+			}
+			fill_dropdwn();
+			// document.getElementById("demo").innerHTML = fill_dropdwn();
+		</script>
   </body>
   <footer>
   	<p>&copy; 2020 Best Solutions. LLC. All Rights Reserved.</p> 
