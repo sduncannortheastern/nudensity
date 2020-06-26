@@ -30,6 +30,30 @@
 			
 			})
 
+			function fill_dropdwn(){
+				var api_url = 'https://gxvu5oh4ne.execute-api.us-east-1.amazonaws.com/prod/buildings';
+				console.log(api_url);
+				$.ajax({
+					url: api_url,
+					contentType: "application/json",
+					dataType: 'json',
+	
+					success: function(result){
+						console.log(result);
+						// return result;
+						var selectList = document.getElementById("location_select_box");
+						for(var i = 0; i < result.Count; i++){
+							var option = document.createElement("option");
+							option.value = result.Items[i].name;
+							option.text = result.Items[i].name;
+							selectList.appendChild(option);
+						}
+					}
+				});
+				// return 
+			}
+			fill_dropdwn();				// document.getElementById("demo").innerHTML = fill_dropdwn();
+
 		});
 
      	function popup(){
@@ -38,7 +62,7 @@
            return false;
 		}
 		
-     </script>
+  </script>
   </head>
   <body>
   	<header>
@@ -109,32 +133,6 @@
   			</tr>
   		<table>
   	<article>
-		<script>
-			function fill_dropdwn(){
-				var api_url = 'https://gxvu5oh4ne.execute-api.us-east-1.amazonaws.com/prod/buildings';
-			console.log(api_url);
-			$.ajax({
-				url: api_url,
-				contentType: "application/json",
-				dataType: 'json',
-
-				success: function(result){
-					console.log(result);
-					// return result;
-					var selectList = document.getElementById("location_select_box");
-					for(var i = 0; i < result.Count; i++){
-						var option = document.createElement("option");
-						option.value = result.Items[i].name;
-						option.text = result.Items[i].name;
-						selectList.appendChild(option);
-					}
-				}
-				});
-				// return 
-			}
-			fill_dropdwn();
-			// document.getElementById("demo").innerHTML = fill_dropdwn();
-		</script>
   </body>
   <footer>
   	<p>&copy; 2020 Best Solutions. LLC. All Rights Reserved.</p> 

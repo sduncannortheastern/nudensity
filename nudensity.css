@@ -40,10 +40,6 @@ tr.searchTable {
 
 }
 
-td.searchTable {
-	#border: 1px solid black;
-}
-
 .button {
   background-color: #008CBA;; /* Blue */
   border: none;
